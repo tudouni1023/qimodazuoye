@@ -1,5 +1,5 @@
 streamlit==1.45.1
-fastai==2.7.2
+fastai==2.8.2
 pandas==2.3.0
 numpy==2.3.0
 torch==2.7.1
