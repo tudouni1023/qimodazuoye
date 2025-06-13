@@ -1,0 +1,11 @@
+streamlit==1.45.1
+fastai==2.7.2
+pandas==2.3.0
+numpy==2.3.0
+torch==2.7.1
+pillow==11.2.1
+matplotlib==3.10.3
+scikit-learn==1.7.0
+optuna==4.3.0
+torchvision==0.22.1
+openpyxl==3.1.2
