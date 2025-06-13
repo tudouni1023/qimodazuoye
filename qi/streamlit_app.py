@@ -20,7 +20,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-nutrition_data = pd.read_excel('food_nutrition.xlsx')
+nutrition_data = pd.read_excel('qi/food_nutrition.xlsx')
 # 缓存资源加载
 @st.cache_resource
 def load_image_model():
@@ -54,7 +54,7 @@ def load_recommendation_model():
     """加载推荐模型权重"""
     try:
         # 加载推荐模型
-        #model_path = Path("best_nutrition.pth")
+        #model_path = Path("qi/best_nutrition.pth")
         #learn = load_learner(model_path)
         collab_data = pd.read_excel('user_food_data.xlsx')
         dls = CollabDataLoaders.from_df(
@@ -78,7 +78,7 @@ def load_recommendation_model():
 def load_nutrition_data():
     """加载食物营养成分表"""
     try:
-        nutrition_data = pd.read_excel('food_nutrition.xlsx')
+        nutrition_data = pd.read_excel('qi/food_nutrition.xlsx')
         # 确保food_id唯一
         nutrition_data['food_id'] = range(1, len(nutrition_data) + 1)
         st.success("✅ 营养成分表加载成功")
