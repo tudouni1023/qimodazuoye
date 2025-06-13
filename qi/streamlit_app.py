@@ -41,7 +41,7 @@ def load_image_model():
         dest_base_path = Path('UECFOOD100_splitted')
         dls = dblock.dataloaders(dest_base_path, bs=64) 
         model1 = vision_learner(dls, model_arch)
-        model1.load_state_dict(torch.load('shibie_model.pth'))
+        model1.load_state_dict(torch.load('qi/shibie_model.pth'))
         st.success("✅ 图像识别模型加载成功")
         return model1
         #return learn
@@ -56,7 +56,7 @@ def load_recommendation_model():
         # 加载推荐模型
         #model_path = Path("qi/best_nutrition.pth")
         #learn = load_learner(model_path)
-        collab_data = pd.read_excel('user_food_data.xlsx')
+        collab_data = pd.read_excel('qi/user_food_data.xlsx')
         dls = CollabDataLoaders.from_df(
         collab_data,
         user_name="user_id",
@@ -66,7 +66,7 @@ def load_recommendation_model():
         seed=42,
         )
         model2 = collab_learner(dls, n_factors=30, y_range=(0, 5))
-        model2.load_state_dict(torch.load('best.pth'))
+        model2.load_state_dict(torch.load('qi/best.pth'))
         st.success("✅ 推荐模型加载成功")
         return model2
         #return learn
